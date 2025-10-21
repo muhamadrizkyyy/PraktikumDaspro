@@ -19,7 +19,7 @@ Berisi hasil percobaan dari praktikum dasar pemrograman miinggu ke 7
 
 ### Pertanyaan Percobaan 2.2
 
-1. syntax tersebut digunakan untuk menghentikan program ketika suatu kondisi sesuai dengan case nya
+1. syntax tersebut digunakan untuk keluar dari blok switch ketika memenuhi salah satu case nya
 2. untuk menangani ketikan suatu kondisi tidak memenuhi salah satu dari case yang telah diset
 
 ### Pertanyaan Percobaan 2.3
