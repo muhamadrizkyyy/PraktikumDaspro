@@ -14,13 +14,8 @@ Berisi hasil percobaan dari praktikum dasar pemrograman miinggu ke 8
 
 ### Jawaban Percobaan 2.1.3
 
-1. karena pengecekannya tidak membandingkan hanya true and false saja
-2. tidak muncul apapun dan program terhenti
-
-### Jawaban Percobaan 2.2
-
 1. for (int i = 0; i <= 10; i++) {
-   **_ statement _**
+   ** statement **
    }
 
 Keterangan :
@@ -35,10 +30,10 @@ i++ ----> update (increment)
 - blok if pertama akan membandingkan apakah value variabel nilai lebih besar dari value variabel tertinggi jika iya maka value variabel nilai akan disimpan ke variabel tertinggi.
 - blok if kedua akan membandingkan apakah value variabel nilai lebih kecil dari value variabel terendah jika iya maka value variabel nilai akan disimpan ke variabel terendah.
 
-### Jawaban Percobaan 2.2.2
+### Jawaban Percobaan 2.2.3
 
-1.  **_ a _** untuk mengecek ketika nilai kurang dari 0 dan lebih dari 100
-    **_ b _** fungsi continue adalah untuk melanjutkan ke perulangan berikutnya
+1.  ** a ** untuk mengecek ketika nilai kurang dari 0 dan lebih dari 100
+    ** b ** fungsi continue adalah untuk melanjutkan ke perulangan berikutnya
 
 2.  untuk menambah value variabel i yang akan digunakan untuk iterasi pada perulangan. jika i++ ditaruh diatas sebelum statement tidak akan mempengaruhi iterasi, namun sout mahasiswa ke - akan berubah.
 
