@@ -13,7 +13,9 @@ public class ArrayNilai17 {
 
         for (int i = 0; i < 10; i++) {
             if (nilaiAkhir[i] > 70) {
-                System.out.println("Nilai ke- "+i+" adalah " + nilaiAkhir[i]);
+                System.out.println("Nilai mahasiswa ke- "+i+" adalah " + nilaiAkhir[i]+" [LULUS]");
+            } else {
+                System.out.println("Nilai mahasiswa ke- "+i+" adalah " + nilaiAkhir[i]+" [TIDAK LULUS]");
             }
         }
     }
