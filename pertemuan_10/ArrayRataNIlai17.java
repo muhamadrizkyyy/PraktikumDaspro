@@ -3,7 +3,11 @@ import java.util.Scanner;
 public class ArrayRataNIlai17 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[] nilaiMhs = new int[10];
+        int jmlMhs;
+
+        System.out.print("Masukkan jumlah mahasiswa : ");
+        jmlMhs = sc.nextInt();
+        int[] nilaiMhs = new int[jmlMhs];
         double total = 0, rata2, mhsLulus = 0;
 
         for (int i = 0; i < nilaiMhs.length; i++) {
