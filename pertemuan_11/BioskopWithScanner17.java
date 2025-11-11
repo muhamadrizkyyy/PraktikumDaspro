@@ -22,15 +22,22 @@ public class BioskopWithScanner17 {
                         System.out.println("\n\n===================================");
                         System.out.print("Masukkan nama penonton: ");
                         nama = input.nextLine();
-                        System.out.print("Masukkan nomor baris: ");
-                        baris = input.nextInt();
-                        System.out.print("Masukkan nomor kolom: ");
-                        kolom = input.nextInt();
+                        
+                        do {
+                            System.out.print("Masukkan nomor baris: ");
+                            baris = input.nextInt();
+                            System.out.print("Masukkan nomor kolom: ");
+                            kolom = input.nextInt();
+
+                            if (penonton[baris-1][kolom-1] == null) {
+                                break;
+                            } else {
+                                System.out.println("Tempat sudah dipesan");
+                            }
+                        } while (true);
 
                         if (baris > penonton.length || kolom > penonton[baris].length) {
                             System.out.println("Baris atau kolom tidak ada");
-                        } else if(penonton[baris - 1][kolom - 1] != null){
-                            System.out.println("Kursi telah dibooking!");
                         } else {
                             penonton[baris - 1][kolom - 1] = nama;
                         };
