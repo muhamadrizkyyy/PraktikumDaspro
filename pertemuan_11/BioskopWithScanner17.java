@@ -8,7 +8,7 @@ public class BioskopWithScanner17 {
         String[][] penonton = new String[4][2];
 
         do {
-            System.out.println("\n\n\n\n\n===================================");
+            System.out.println("===================================");
             System.out.println("Menu 1: input data penonton");
             System.out.println("Menu 2: tampil data penonton");
             System.out.println("Menu 3: exit");
@@ -27,7 +27,14 @@ public class BioskopWithScanner17 {
                         System.out.print("Masukkan nomor kolom: ");
                         kolom = input.nextInt();
 
-                        penonton[baris - 1][kolom - 1] = nama;
+                        if (baris > penonton.length || kolom > penonton[baris].length) {
+                            System.out.println("Baris atau kolom tidak ada");
+                        } else if(penonton[baris - 1][kolom - 1] != null){
+                            System.out.println("Kursi telah dibooking!");
+                        } else {
+                            penonton[baris - 1][kolom - 1] = nama;
+                        };
+
                         input.nextLine();
 
                         System.out.print("Masukkan data lagi? (y/n) ");
