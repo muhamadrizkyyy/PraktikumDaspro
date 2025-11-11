@@ -11,8 +11,12 @@ public class Bioskop17 {
         penonton[3][0] = "Gisel";
         penonton[3][1] = "Hana";
 
-        for (int i = 0; i < penonton.length; i++) {
-            System.out.println("Panjang baris ke-" + i + " = " + penonton[i].length);
+        // for (int i = 0; i < penonton.length; i++) {
+        //     System.out.println("Panjang baris ke-" + i + " = " + penonton[i].length);
+        // }
+
+        for (String[] pnt : penonton) {
+            System.out.println("Panjang baris : " + pnt.length);
         }
 
         // System.out.printf("%s \t %s\n", penonton[0][0], penonton[0][1]);
