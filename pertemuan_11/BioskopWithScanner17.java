@@ -53,10 +53,15 @@ public class BioskopWithScanner17 {
                     break;
                 case 2:
                     System.out.println("\n\n===================================");
+                    int x = 0, y = 0;
                     for (String[] list : penonton) {
                         for (String data : list) {
-                            System.out.println(data);
+                            if (data == null) {
+                                System.out.println("kursi " + +x + "" + y + " : " + "****");
+                            }
+                            y++;
                         }
+                        x++;
                     }
                     break;
                 case 3:
