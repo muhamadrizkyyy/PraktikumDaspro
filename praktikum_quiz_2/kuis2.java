@@ -6,6 +6,7 @@ public class kuis2 {
         Scanner sc = new Scanner(System.in);
         int hasilDonasi[][]= new int[3][3];
         int wilayahDonasiTerbesar = 0;
+        int donasiTerbesar = 0;
         double totalDonasi = 0;
 
         // Memasukkan jumlah donasi per kategori dan wilayah
@@ -24,12 +25,12 @@ public class kuis2 {
         // Menghitung total donasi per wilayah dan 
         for (int i = 0; i < hasilDonasi.length; i++) {
             int totalDonasiWilayah = 0;
-            int donasiTerbesar = 0;
             for (int j = 0; j < hasilDonasi[i].length; j++) {
                 totalDonasiWilayah += hasilDonasi[i][j];
             }
 
             if (totalDonasiWilayah > donasiTerbesar) {
+                donasiTerbesar = totalDonasiWilayah;
                 wilayahDonasiTerbesar = i;
             }
 
