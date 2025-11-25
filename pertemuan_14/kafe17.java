@@ -4,15 +4,28 @@ public class kafe17 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String kodePromo = "DISKON50";
+        int totalBayar = 0;
 
-        menu("Budi", true, kodePromo);
+        do {
+            menu("Budi", true, kodePromo);
 
-        System.out.print("Pilih menu: ");
-        int pilih = sc.nextInt();
-        System.out.print("Quantity: ");
-        int qty = sc.nextInt();
+            System.out.print("Pilih menu: ");
+            int pilih = sc.nextInt();
+            System.out.print("Quantity: ");
+            int qty = sc.nextInt();
+            int totalHarga = hitungTotalHarga(pilih, qty, kodePromo);
+            totalBayar += totalHarga;    
 
-        int totalBayar = hitungTotalHarga(pilih, qty, kodePromo);
+            sc.nextLine(); // Clear input buffer
+            
+            System.out.print("Apakah ingin pilih menu lagi (y/n): ");
+            String lanjut = sc.nextLine();
+            if (lanjut.equalsIgnoreCase("n")) {
+                break;
+            }
+
+        } while (true);
+
         System.out.println("Total Bayar: Rp " + totalBayar);
     }
 
