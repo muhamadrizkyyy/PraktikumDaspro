@@ -7,13 +7,14 @@ public class percobaan2 {
         int bilangan = sc.nextInt();
         System.out.print("Masukkan pangkat: ");
         int pangkat = sc.nextInt();
-        System.out.println("Hasil: " + hitungPangkat(bilangan, pangkat));
+        System.out.println(" = " + hitungPangkat(bilangan, pangkat));
     }
 
     static int hitungPangkat(int x, int y) {
         if (y == 0) {
             return 1;
         } else {
+            System.out.print(y != 1 ? x + " x " : x); 
             return (x * hitungPangkat(x, y - 1));
         }
     }
