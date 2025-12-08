@@ -26,14 +26,14 @@ public class si_pendaftar {
                     data_pendaftar = addData(data_pendaftar);
                     break;
                 case 2:
-                    showData(data_pendaftar, "");
+                    showData(data_pendaftar);
                     break;
                 case 3:
                     // inputan untuk user memasukkan filter prodi yang diinginkan
                     sc.nextLine();
                     System.out.print("Masukkan program studi yang dicari : ");
                     String prodi = sc.nextLine();
-                    showData(data_pendaftar, prodi);
+                    showDataProdi(data_pendaftar, prodi);
                     break;
                 case 4:
                     countData(data_pendaftar);
@@ -94,7 +94,39 @@ public class si_pendaftar {
         return tempArr;
     }
 
-    static void showData(String[][] data, String filter) {
+    static void showDataProdi(String[][] data, String filter) {
+        int dataFound = 0;
+        // menampilkan data
+        System.out.println("\n========================================================");
+        System.out.println(
+                "Nama\t\tNIM\t\tProgram Studi\t\t\tPerusahaan\t\tSemester\tStatus magang");
+        System.out.println("===========================================================\n");
+
+        if (data.length == 0) {
+            System.out.println("Tidak ada data");
+        } else {
+            for (int i = 0; i < data.length; i++) {
+                if (filter.equalsIgnoreCase(data[i][2])) {
+                    for (int j = 0; j < data[i].length; j++) {
+                        // pengecekan data yang ditampilkan harus sesuai filter prodi yang diinputkan
+                        System.out.print(data[i][j] + "\t\t");
+                        dataFound++;
+                    }
+                    System.out.println();
+                } else {
+                    continue;
+                }
+            }
+            // blok if untuk menampilkan keterangan jika data tidak ditemukan sesuai prodi
+            if (dataFound == 0 && !filter.equals("")) {
+                System.out.println("Data tidak ditemukan");
+            }
+        }
+
+        System.out.println("\n=============================================\n");
+    }
+
+    static void showData(String[][] data) {
         int dataFound = 0;
         // menampilkan data
         System.out.println("\n========================================================");
@@ -107,22 +139,9 @@ public class si_pendaftar {
         } else {
             for (int i = 0; i < data.length; i++) {
                 for (int j = 0; j < data[i].length; j++) {
-                    // pengecekan apakah filter kosong atau tidak
-                    if (filter.equals("")) {
-                        System.out.print(data[i][j] + "\t\t");
-                    } else {
-                        // pengecekan data yang ditampilkan harus sesuai filter prodi yang diinputkan
-                        if (filter.equalsIgnoreCase(data[i][2])) {
-                            System.out.print(data[i][j] + "\t\t");
-                            dataFound++;
-                        }
-                    }
+                    System.out.print(data[i][j] + "\t\t");
                 }
                 System.out.println();
-            }
-            // blok if untuk menampilkan keterangan jika data tidak ditemukan sesuai prodi
-            if (dataFound == 0 && !filter.equals("")) {
-                System.out.println("Data tidak ditemukan");
             }
         }
 
@@ -133,22 +152,26 @@ public class si_pendaftar {
         // inisialisasi variabel untuk menyimpan jumlah pendaftar berdasarkan statusnya
         int accept = 0, wait = 0, reject = 0;
 
-        // perulangan untuk menjumlahkan sesuai dengan statusnya
-        for (int i = 0; i < data.length; i++) {
-            if (data[i][5].equalsIgnoreCase("Diterima")) {
-                accept++;
-            } else if (data[i][5].equalsIgnoreCase("Menunggu")) {
-                wait++;
-            } else {
-                reject++;
+        if (data.length == 0) {
+            System.out.println("Belum ada pendaftar");
+        } else {
+            // perulangan untuk menjumlahkan sesuai dengan statusnya
+            for (int i = 0; i < data.length; i++) {
+                if (data[i][5].equalsIgnoreCase("Diterima")) {
+                    accept++;
+                } else if (data[i][5].equalsIgnoreCase("Menunggu")) {
+                    wait++;
+                } else {
+                    reject++;
+                }
             }
-        }
 
-        // menampilkan total pendaftar dan jumlah sesuai statusnya
-        System.out.println("Jumlah Pendaftar : " + data.length);
-        System.out.println("=== Status Pendaftar ===");
-        System.out.println("Diterima : " + accept);
-        System.out.println("Menunggu : " + wait);
-        System.out.println("Ditolak : " + reject);
+            // menampilkan total pendaftar dan jumlah sesuai statusnya
+            System.out.println("Jumlah Pendaftar : " + data.length);
+            System.out.println("=== Status Pendaftar ===");
+            System.out.println("Diterima : " + accept);
+            System.out.println("Menunggu : " + wait);
+            System.out.println("Ditolak : " + reject);
+        }
     }
 }
